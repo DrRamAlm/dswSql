@@ -1,0 +1,10 @@
+
+
+	Autor: Dailos Ramírez Almeida
+	
+	IDE: Visual Studio Code
+
+	Entorno de desarrollo:
+		- XAMPP Version 8.0.11
+		- Apache 2.4.51
+		- PHP 8.0.11 (VS16 X86 64bit thread safe) + PEAR
