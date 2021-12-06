@@ -1,3 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <?php
+    include("functions.php");
+    setcookie("ckdatauser", false, -1);
+    if (isset($_GET["error"])) {
+        session_start();
+        showErrors($_SESSION["error"]);
+    }
+    showRegisterform();
+
+    ?>
+</body>
+
+</html>
+
+
 <?php
 
 /*
@@ -5,7 +31,9 @@
 1º) Eliminará la cookie ckdatauser.
 2º) Se mostrará el formulario de recogida de datos que estime oportuno (en base al
 modelo de datos proporcionado) correspondiente a los campos de la tabla customer:
-Usuario (username), Contraseña (password), Nombre (name), Apellido 1 (firstlastname),
+Usuario (username), 
+Contraseña (password), 
+Nombre (name), Apellido 1 (firstlastname),
 Apellido 2 (secondlastname), Fecha de nacimiento (birthdaydate), Calle (streetdirection),
 N.º (streetnumber), CP (provincecode), Municipio (cityid), Provincia (provinceid), país
 (countryid), Teléfono 1 (telephone1), teléfono 2 (telephone2), email.

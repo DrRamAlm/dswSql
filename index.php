@@ -1,18 +1,37 @@
+<?php
+session_start();
+include("functions.php");
+//var_dump($_SESSION);
+
+if (isset($_COOKIE["ckdatauser"])) {
+    header("location: validateuser.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
+    <?php
+    if (isset($_GET["error"])) {
+        showErrors($_SESSION["error"]);
+    }
 
+    showLoginForm();
 
+    ?>
 </body>
 
 </html>
-
-
 <?php
 /*
 2.2.1. Lógica de negocio

@@ -1,5 +1,9 @@
 <?php
-
+include ("functions.php");
+session_start();
+setcookie("ckdatauser", null, -1);
+session_destroy();
+header("location: index.php");
 
 /*
 2.5.1. Lógica de negocio
@@ -8,6 +12,3 @@
 3º) Redireccionará por get sin datos al script index.php
 
 */
-
-
-?>
