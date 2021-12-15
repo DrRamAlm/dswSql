@@ -9,6 +9,12 @@ function validateLoginForm()
 
 function validateRegisterForm($data)
 {
+    foreach ($data as $value) {
+        if (strlen($value) == 0) {
+            $_SESSION["error"]= "Datos incompletos.";
+            return false;
+        }
+    }
     return true;
 }
 
@@ -114,4 +120,7 @@ function clearData()
 
 function showErrors($errorCode)
 {
+    print "<div class=\"error\">";
+    print $_SESSION["error"];
+    print "</div>";
 }
